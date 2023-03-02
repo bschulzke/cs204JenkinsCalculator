@@ -1,5 +1,6 @@
 import java.util.UUID;
 
+// A Calculator that can find fibonacci numbers, turn ints to binary, etc
 class Calculator {
 
     Calculator(){
