@@ -35,7 +35,7 @@ class Calculator {
     4 = 3
     5 = 5
     .
-    .
+    .   
     .
     etc
      */
