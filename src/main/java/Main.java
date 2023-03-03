@@ -1,13 +1,19 @@
+import java.util.Scanner;
+
 public class Main {
 
   public static void main(String args[]) {
 
     Calculator calculator = new Calculator();
 
-    String operation = args[0];
+    System.out.println("Enter a command: ");
 
-    int a = Integer.parseInt(args[1]);
-    int b = Integer.parseInt(args[2]);
+    Scanner s = new Scanner(System.in);
+
+    String operation = s.next();
+    int a = s.nextInt();
+    int b = s.nextInt();
+
     int result = -1000000000;
     String binary;
 
