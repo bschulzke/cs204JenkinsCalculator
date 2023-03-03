@@ -119,5 +119,26 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void createTwoUniqueIDsTest(){
+        Calculator myCalculator = new Calculator();
+        Set<String> uniqueIDBank = new HashSet<String>();
+
+        for(int i = 0; i < 10; i++){
+            uniqueIDBank.add(myCalculator.createUniqueID("CS204"));
+            uniqueIDBank.add(myCalculator.createUniqueID("CS205"));
+        }
+
+        assertEquals(20 , uniqueIDBank.size());
+
+        Set<String> idStrings = new HashSet<>();
+        for(String targetString:uniqueIDBank){
+            assertTrue(targetString.contains("CS"));
+            assertFalse(idStrings.contains(targetString));
+            idStrings.add(targetString);
+        }
+
+    }
+
 
 }
