@@ -13,13 +13,20 @@ public class Main {
     Scanner s = new Scanner(System.in);
 
     String operation = s.next();
+    if (operation.equals("q")) {
+      System.out.println("Goodbye!");
+      return;
+    }
     int a = s.nextInt();
-    int b = s.nextInt();
+    int b = -100000;
+    if (!operation.equals("fib") && !operation.equals("binary")) {
+      b = s.nextInt();
+    }
 
     int result = -1000000000;
     String binary;
 
-    while (operation != "q") {
+    while (!operation.equals("q")) {
       if (operation.equals("add")) {
         result = calculator.add(a, b);
       }
@@ -43,10 +50,16 @@ public class Main {
 
       System.out.println(result);
       System.out.println("Enter a command: ");
+      operation = s.next();
+      if (operation.equals("q")) {
+        System.out.println("Goodbye!");
+        return;
+      }
+      a = s.nextInt();
+      if (!operation.equals("fib") && !operation.equals("binary")) {
+        b = s.nextInt();
+      }
     }
-
-    System.out.println("Goodbye!");
-
   }
 
 }
